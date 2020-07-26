@@ -30,12 +30,12 @@ class MovieListCell: UITableViewCell {
     }
     
 	func updateUI(_ movie:Movie){
+		titleLbl.text = movie.title
+		ratingView.value = CGFloat(ceil(movie.rating)/2)
+		releasedate.text = "Released on: ".appending(RFDateFormatter.formatDate(date: movie.releaseDate))
 		guard let posterPath = movie.posterPath, let url = URL(string: MOVIE_POSTER_BASE_URL.appending(posterPath)) else {
 			return
 		}
 		moviePoster.sd_setImage(with: url, completed: nil)
-		titleLbl.text = movie.title
-		ratingView.value = CGFloat(ceil(movie.rating)/2)
-		releasedate.text = "Released on: ".appending(RFDateFormatter.formatDate(date: movie.releaseDate))
 	}
 }
