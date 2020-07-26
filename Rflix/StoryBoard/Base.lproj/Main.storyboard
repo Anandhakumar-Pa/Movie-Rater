@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Si-dr-Qey">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -243,7 +244,7 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="aKn-hT-rae"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-kG-aKL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-kG-aKL">
                                 <rect key="frame" x="0.0" y="121" width="375" height="497"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
@@ -429,17 +430,32 @@
                                     <constraint firstItem="38M-FO-Kup" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OL5-oc-WSJ" secondAttribute="leading" constant="20" id="i08-GE-9n5"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="MRa-UF-wxt">
+                                <rect key="frame" x="5" y="65" width="365" height="553"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aW8-ew-cJi" id="8xQ-yc-7qM"/>
+                                    <outlet property="delegate" destination="aW8-ew-cJi" id="Tda-JO-2mz"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="FJb-Y5-pvC" firstAttribute="trailing" secondItem="OL5-oc-WSJ" secondAttribute="trailing" id="6Xm-jf-tzf"/>
                             <constraint firstItem="OL5-oc-WSJ" firstAttribute="leading" secondItem="FJb-Y5-pvC" secondAttribute="leading" id="9o8-YL-Rlj"/>
                             <constraint firstItem="OL5-oc-WSJ" firstAttribute="top" secondItem="FJb-Y5-pvC" secondAttribute="top" id="VKP-7t-XUc"/>
+                            <constraint firstItem="MRa-UF-wxt" firstAttribute="leading" secondItem="FJb-Y5-pvC" secondAttribute="leading" constant="5" id="W35-fk-V2x"/>
+                            <constraint firstItem="MRa-UF-wxt" firstAttribute="top" secondItem="OL5-oc-WSJ" secondAttribute="bottom" id="WU4-c9-ZNL"/>
+                            <constraint firstItem="MRa-UF-wxt" firstAttribute="bottom" secondItem="FJb-Y5-pvC" secondAttribute="bottom" id="XV3-Xb-KOU"/>
+                            <constraint firstItem="FJb-Y5-pvC" firstAttribute="trailing" secondItem="MRa-UF-wxt" secondAttribute="trailing" constant="5" id="utM-xB-ElP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FJb-Y5-pvC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Ratings" image="star" catalog="system" id="cz4-Jq-TxA"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="movieTableView" destination="MRa-UF-wxt" id="ffc-HN-dJU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5o-MX-hUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -93,7 +93,7 @@ extension RflixServiceController:NetworkManagerDelegate{
 	}
 	
 	func dataAccessCompletedWithResponse(responseData data: Data, urlResponse urlresponse: HTTPURLResponse) {
-		if urlresponse.statusCode == 200{
+		if urlresponse.statusCode == 200, serviceDelegate != nil {
 			switch serviceRequestType {
 				case .AUTHENTICATION_SERVICE:
 					serviceDelegate = nil

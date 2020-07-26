@@ -10,7 +10,7 @@ import Foundation
 	
 struct Movie:Codable {
 	let id:Int
-	let posterPath:String
+	let posterPath:String!
 	let title:String
 	let releaseDate:String
 	var rating:Double

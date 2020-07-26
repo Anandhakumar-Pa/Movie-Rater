@@ -31,6 +31,21 @@ class SearchServiceController: NSObject {
 		networkManager.delegate = self
 		networkManager.initWithUrlrequest(request: urlReq)
 	}
+	
+	func getMyRatings() {
+		
+		let requestURl = String(format: GET_MY_RATINGS_URL, ACCESS_TOKEN,TMDB_API_KEY)
+		
+		var wrapper = RequestWrapper()
+		
+		wrapper.requestMethod = HTTP_METHOD.GET.rawValue
+		
+		let urlReq = RequestGenerator.createRequestWithURL(urlString: requestURl, timoutInterval: Double.infinity, wrapper: wrapper)
+		
+		let networkManager = NetworkManager()
+		networkManager.delegate = self
+		networkManager.initWithUrlrequest(request: urlReq)
+	}
 }
 
 extension SearchServiceController:NetworkManagerDelegate{

@@ -9,8 +9,6 @@
 import UIKit
 import HCSStarRatingView
 
-let cellIdentifier = "MovieListCell"
-
 class MoviesListViewController: UIViewController {
 
 	@IBOutlet weak var titleLbl:UILabel!

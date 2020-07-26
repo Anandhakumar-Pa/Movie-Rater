@@ -9,6 +9,8 @@
 import UIKit
 import HCSStarRatingView
 
+let cellIdentifier = "MovieListCell"
+
 class MovieListCell: UITableViewCell {
 
 	@IBOutlet weak var moviePoster:UIImageView!
@@ -28,7 +30,7 @@ class MovieListCell: UITableViewCell {
     }
     
 	func updateUI(_ movie:Movie){
-		guard let url = URL(string: MOVIE_POSTER_BASE_URL.appending(movie.posterPath)) else {
+		guard let posterPath = movie.posterPath, let url = URL(string: MOVIE_POSTER_BASE_URL.appending(posterPath)) else {
 			return
 		}
 		moviePoster.sd_setImage(with: url, completed: nil)
