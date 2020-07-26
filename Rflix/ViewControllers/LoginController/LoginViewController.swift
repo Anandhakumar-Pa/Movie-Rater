@@ -15,8 +15,7 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var loginBtn:UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-		userNameText.text = "margianand"
-		passwordText.text = "Qatar@123"
+	
 		callAuthenticationService()
         // Do any additional setup after loading the view.
     }
