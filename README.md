@@ -1,3 +1,3 @@
-# R-flix
+# Movie Rating
 
 A Movie Rating Mobile App
