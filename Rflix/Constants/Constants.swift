@@ -8,4 +8,4 @@
 
 import Foundation
 
-let TMDB_API_KEY = "5bd25b61203fe030bbd857b4c255d808"
+let TMDB_API_KEY = ""
